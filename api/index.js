@@ -3,11 +3,17 @@
  * Hosted on Vercel
  */
 
+import { verifyApiKey } from '../lib/auth.js';
+
 export default async function handler(req, res) {
+  // Verify API Key
+  if (!verifyApiKey(req, res)) {
+    return; // Response already sent by verifyApiKey
+  }
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-API-Key');
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
