@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "name": "bitrix24-api",
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    }
+  ],
+  "env": {
+    "BITRIX24_WEBHOOK_URL": "@bitrix24-webhook-url"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "bitrix24-vercel-api",
+  "version": "1.0.0",
+  "description": "Bitrix24 REST API proxy hosted on Vercel",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": ["bitrix24", "api", "vercel", "serverless"],
+  "author": "2Penguins Team",
+  "license": "MIT"
+}
