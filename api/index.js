@@ -28,7 +28,8 @@ export default async function handler(req, res) {
   if (!method) {
     return res.status(200).json({
       name: 'Bitrix24 API Proxy',
-      version: '1.0.0',
+      version: '2.0.0',
+      security: 'API Key Required (X-API-Key header)',
       usage: {
         endpoint: '/api',
         methods: ['GET', 'POST'],
